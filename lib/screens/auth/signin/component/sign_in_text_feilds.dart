@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:getten/screens/bottom-bar/bottom_bar_screen.dart';
+import 'package:get/get.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 import 'package:getten/widget/custom_long_button_widget.dart';
 import 'package:getten/widget/custom_small_heading_widget.dart';
 import 'package:getten/widget/custom_text_field_widget.dart';
@@ -54,12 +55,7 @@ class _SigninTextFeilsState extends State<SigninTextFeils> {
           backgroundColor: AppColors.primaryColor,
           textColor: AppColors.whiteColor,
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: ((context) => const NavigatorScreen()),
-              ),
-            );
+            Get.offNamed(RoutesName.navigatorScreen);
           },
         ),
       ],

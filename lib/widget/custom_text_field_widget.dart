@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
+import 'package:getten/utils/constant/constant.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
   final String hintText;
@@ -34,21 +35,9 @@ class CustomTextFieldWidget extends StatelessWidget {
         hintStyle: const TextStyle(
           color: AppColors.greyScale500Color,
         ),
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: AppColors.blackColor.withOpacity(0.3),
-          ),
-        ),
-        enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: AppColors.blackColor.withOpacity(0.3),
-          ),
-        ),
-        errorBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: AppColors.blackColor.withOpacity(0.3),
-          ),
-        ),
+        focusedBorder: border,
+        enabledBorder: border,
+        errorBorder: border,
       ),
     );
   }

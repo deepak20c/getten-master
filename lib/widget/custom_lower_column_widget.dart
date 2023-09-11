@@ -1,8 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:getten/screens/auth/forget/forget_password_screen.dart';
+import 'package:get/get.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 import 'package:getten/widget/social_media_widget.dart';
 
 class CustomLowerColumnWidget extends StatelessWidget {
@@ -29,31 +30,27 @@ class CustomLowerColumnWidget extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: ((context) => const ForgetPasswordScreen()),
-              ),
-            );
+            Get.toNamed(RoutesName.forgetPasswordScreen);
           },
           child: RichText(
             text: TextSpan(
-                text: 'Forget the password? ',
-                style: TextStyle(
-                  color: AppColors.greyScale700Color,
-                  fontSize: dimensions.getScreenWidth * 0.035,
-                  fontWeight: FontWeight.bold,
-                ),
-                children: [
-                  TextSpan(
-                    text: 'Get Help',
-                    style: TextStyle(
-                      color: AppColors.primaryColor,
-                      fontSize: dimensions.getScreenWidth * 0.04,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
-                ]),
+              text: 'Forget the password? ',
+              style: TextStyle(
+                color: AppColors.greyScale700Color,
+                fontSize: dimensions.getScreenWidth * 0.035,
+                fontWeight: FontWeight.bold,
+              ),
+              children: [
+                TextSpan(
+                  text: 'Get Help',
+                  style: TextStyle(
+                    color: AppColors.primaryColor,
+                    fontSize: dimensions.getScreenWidth * 0.04,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            ),
           ),
         ),
         SizedBox(height: dimensions.getScreenHeight * 0.05),

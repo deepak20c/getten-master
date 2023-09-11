@@ -1,11 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:getten/screens/auth/signin/signin_screen.dart';
+import 'package:get/get.dart';
 import 'package:getten/screens/auth/signup/component/create_tabs.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/assets/images/images.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 import 'package:getten/widget/custom_lower_column_widget.dart';
 
 class BodySignUpScreen extends StatelessWidget {
@@ -61,12 +62,7 @@ class BodySignUpScreen extends StatelessWidget {
               CustomLowerColumnWidget(
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: ((context) => const SignInScreen()),
-                      ),
-                    );
+                    Get.offNamed(RoutesName.signInScreen);
                   },
                 onFacebookTapped: () {},
                 onGoogleTapped: () {},

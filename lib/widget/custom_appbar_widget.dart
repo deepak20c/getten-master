@@ -7,10 +7,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.text,
     this.isTrailing = true,
+    this.isLeading = true,
   });
 
   final String text;
   final bool isTrailing;
+  final bool isLeading;
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       backgroundColor: AppColors.whiteColor,
       automaticallyImplyLeading: false,
+      leading: isLeading
+          ? IconButton(
+              onPressed: () {
+                if (Navigator.canPop(context)) {
+                  Navigator.pop(context);
+                }
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios_new_outlined,
+                color: AppColors.blackColor,
+              ),
+            )
+          : const SizedBox(width: 0),
       title: Text(
         text,
         style: TextStyle(

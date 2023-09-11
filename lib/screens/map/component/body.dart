@@ -1,9 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:getten/screens/bottom-bar/bottom_bar_screen.dart';
+import 'package:get/get.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 import 'package:getten/widget/custom_long_button_widget.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -74,12 +75,7 @@ class _BodyMapScreen extends State<BodyMapScreen> {
               backgroundColor: AppColors.primaryColor,
               textColor: AppColors.whiteColor,
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => const NavigatorScreen()),
-                  ),
-                );
+                Get.offNamed(RoutesName.navigatorScreen);
               },
             ),
           ),

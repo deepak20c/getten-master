@@ -2,6 +2,8 @@ import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:getten/screens/home/home_screen.dart';
 import 'package:getten/screens/map/map_screen.dart';
+import 'package:getten/screens/profile/profile_screen.dart';
+import 'package:getten/screens/settings/settings_screen.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/responsive/dimension.dart';
 
@@ -31,13 +33,15 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
         ],
       ),
       bottomNavigationBar: DotNavigationBar(
-        enableFloatingNavBar: true,
+        enableFloatingNavBar: false,
         currentIndex: _selectedIndex,
         dotIndicatorColor: AppColors.whiteColor,
         backgroundColor: AppColors.whiteColor,
-        unselectedItemColor: AppColors.greyScale500Color,
         splashBorderRadius: dimensions.getScreenWidth * 0.1,
+        splashColor: AppColors.whiteColor,
         margin: EdgeInsets.zero,
+        paddingR: EdgeInsets.zero,
+        marginR: EdgeInsets.zero,
         onTap: (value) {
           _selectedIndex = value;
           setState(() {});
@@ -72,7 +76,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
 const list = [
   HomeScreen(),
   MapScreen(),
+  ProfileScreen(),
   HomeScreen(),
-  HomeScreen(),
-  HomeScreen(),
+  SettingScreen(),
 ];

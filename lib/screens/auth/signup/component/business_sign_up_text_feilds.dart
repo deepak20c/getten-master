@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/assets/images/images.dart';
+import 'package:getten/utils/constant/constant.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/widget/custom_dropdown_widget.dart';
 import 'package:getten/widget/custom_long_button_widget.dart';
-import 'package:getten/widget/custom_selection_container.dart';
 import 'package:getten/widget/custom_small_heading_widget.dart';
 import 'package:getten/widget/custom_text_field_widget.dart';
 import 'package:getten/widget/password_textfields_widget.dart';
@@ -33,54 +34,6 @@ class _BusinessTextFeildsState extends State<BusinessTextFeilds> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          'Choose you subscription plan (Optional)',
-          style: TextStyle(
-            color: AppColors.blackColor,
-            fontSize: dimensions.getScreenHeight * 0.02,
-          ),
-        ),
-        SizedBox(
-          height: dimensions.getScreenHeight * 0.03,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox(
-              width: dimensions.getScreenWidth * 0.25,
-              child: const CustomSelctionContainerWidget(
-                buttonText: 'Free Plan',
-                backgroundColor: AppColors.primaryColor,
-                textColor: AppColors.whiteColor,
-              ),
-            ),
-            SizedBox(
-              width: dimensions.getScreenWidth * 0.25,
-              child: CustomSelctionContainerWidget(
-                buttonText: 'Sliver Plan',
-                border: Border.all(
-                  width: dimensions.getScreenWidth * 0.001,
-                ),
-                backgroundColor: Colors.transparent,
-                textColor: AppColors.blackColor,
-              ),
-            ),
-            SizedBox(
-              width: dimensions.getScreenWidth * 0.25,
-              child: CustomSelctionContainerWidget(
-                buttonText: 'Gold Plan',
-                backgroundColor: Colors.transparent,
-                border: Border.all(
-                  width: dimensions.getScreenWidth * 0.001,
-                ),
-                textColor: AppColors.blackColor,
-              ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: dimensions.getScreenHeight * 0.03,
-        ),
         const CustomSmallHeading(text: 'Business Name'),
         CustomTextFieldWidget(
           onEditingComplete: () {},
@@ -103,6 +56,36 @@ class _BusinessTextFeildsState extends State<BusinessTextFeilds> {
           inputType: TextInputType.name,
           inputAction: TextInputAction.next,
           controller: _websiteController,
+        ),
+        SizedBox(height: dimensions.getScreenHeight * 0.03),
+        const CustomSmallHeading(text: 'Country'),
+        CustomDropDownWidget(
+          initialValue: "Afghanistan",
+          list: countries,
+        ),
+        SizedBox(height: dimensions.getScreenHeight * 0.03),
+        const CustomSmallHeading(text: 'State'),
+        CustomTextFieldWidget(
+          onEditingComplete: () {},
+          validations: (value) {
+            return null;
+          },
+          hintText: 'Enter your state',
+          inputType: TextInputType.name,
+          inputAction: TextInputAction.next,
+          controller: _addressController,
+        ),
+        SizedBox(height: dimensions.getScreenHeight * 0.03),
+        const CustomSmallHeading(text: 'City'),
+        CustomTextFieldWidget(
+          onEditingComplete: () {},
+          validations: (value) {
+            return null;
+          },
+          hintText: 'Enter your business city',
+          inputType: TextInputType.name,
+          inputAction: TextInputAction.next,
+          controller: _addressController,
         ),
         SizedBox(height: dimensions.getScreenHeight * 0.03),
         const CustomSmallHeading(text: 'Address'),
@@ -141,6 +124,18 @@ class _BusinessTextFeildsState extends State<BusinessTextFeilds> {
           controller: _phoneController,
         ),
         SizedBox(height: dimensions.getScreenHeight * 0.03),
+        const CustomSmallHeading(text: 'Business Category'),
+        CustomTextFieldWidget(
+          onEditingComplete: () {},
+          validations: (value) {
+            return null;
+          },
+          hintText: 'Enter your business type',
+          inputType: TextInputType.phone,
+          inputAction: TextInputAction.next,
+          controller: _phoneController,
+        ),
+        SizedBox(height: dimensions.getScreenHeight * 0.03),
         const CustomSmallHeading(text: 'Password'),
         CustomPasswordFeildWidget(
           hintText: 'Enter your password',
@@ -151,7 +146,7 @@ class _BusinessTextFeildsState extends State<BusinessTextFeilds> {
             return null;
           },
         ),
-        SizedBox(height: dimensions.getScreenHeight * 0.05),
+        SizedBox(height: dimensions.getScreenHeight * 0.03),
         const CustomSmallHeading(text: 'Confirm Password'),
         CustomPasswordFeildWidget(
           textInputAction: TextInputAction.done,
@@ -162,7 +157,7 @@ class _BusinessTextFeildsState extends State<BusinessTextFeilds> {
             return null;
           },
         ),
-        SizedBox(height: dimensions.getScreenHeight * 0.05),
+        SizedBox(height: dimensions.getScreenHeight * 0.03),
         const CustomSmallHeading(text: 'Business Logo'),
         SizedBox(height: dimensions.getScreenHeight * 0.03),
         Container(
@@ -184,7 +179,7 @@ class _BusinessTextFeildsState extends State<BusinessTextFeilds> {
                 )),
           ),
         ),
-        SizedBox(height: dimensions.getScreenHeight * 0.05),
+        SizedBox(height: dimensions.getScreenHeight * 0.03),
         CustomLongButtonWidget(
           text: 'Sign Up',
           height: dimensions.getScreenHeight * 0.065,

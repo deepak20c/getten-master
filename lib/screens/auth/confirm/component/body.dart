@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:getten/screens/auth/signin/signin_screen.dart';
+import 'package:get/get.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/assets/images/images.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 import 'package:getten/widget/custom_long_button_widget.dart';
 
 class BodyConfrimScreen extends StatelessWidget {
@@ -53,12 +54,7 @@ class BodyConfrimScreen extends StatelessWidget {
                   backgroundColor: AppColors.primaryColor,
                   textColor: AppColors.whiteColor,
                   onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: ((context) => const SignInScreen()),
-                      ),
-                    );
+                    Get.offNamed(RoutesName.signInScreen);
                   },
                 ),
               ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:getten/screens/auth/reset/reset_password_screen.dart';
+import 'package:get/get.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 import 'package:getten/widget/custom_long_button_widget.dart';
 import 'package:getten/widget/custom_text_field_widget.dart';
 
@@ -148,12 +149,7 @@ class _OTPTextFeildsState extends State<OTPTextFeilds> {
           backgroundColor: AppColors.primaryColor,
           textColor: AppColors.whiteColor,
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: ((context) => const ResetPasswordScreen()),
-              ),
-            );
+            Get.toNamed(RoutesName.resetScreen);
           },
         ),
       ],

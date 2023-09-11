@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:getten/screens/welcome/splash/splash_screen.dart';
+import 'package:getten/utils/routes/routes.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -31,7 +32,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      home: const SplashScreen(),
+      // home: const NavigatorScreen(),
+      initialRoute: RoutesName.splashScreen,
+      getPages: AppRoutes.appRoutes(),
     );
   }
 }

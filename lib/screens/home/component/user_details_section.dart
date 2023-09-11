@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/assets/images/images.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 
 class UserDetailsSection extends StatelessWidget {
   const UserDetailsSection({
@@ -52,16 +54,27 @@ class UserDetailsSection extends StatelessWidget {
               ),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.only(right: dimensions.getScreenWidth * 0.03),
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.message_outlined,
-                size: dimensions.getScreenWidth * 0.08,
-                color: AppColors.blackColor,
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.message_outlined,
+                  size: dimensions.getScreenWidth * 0.08,
+                  color: AppColors.blackColor,
+                ),
               ),
-            ),
+              IconButton(
+                onPressed: () {
+                  Get.toNamed(RoutesName.qrScreen);
+                },
+                icon: Icon(
+                  Icons.qr_code_scanner_outlined,
+                  size: dimensions.getScreenWidth * 0.08,
+                  color: AppColors.blackColor,
+                ),
+              ),
+            ],
           ),
         ],
       ),

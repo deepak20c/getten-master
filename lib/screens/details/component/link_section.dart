@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:getten/screens/details/component/circle_container.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/widget/custom_circle_container.dart';
 
 class LinkSection extends StatelessWidget {
   final void Function()? onWebsite;
@@ -30,30 +30,45 @@ class LinkSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          CircleIconContainer(
+          CustomCircleIconContainer(
             icon: Icons.language,
             text: 'Website',
             onPressed: onWebsite,
+            iconBGColor: AppColors.disabledColor.withOpacity(0.5),
+            iconColor: AppColors.whiteColor,
+            textColor: AppColors.whiteColor,
           ),
-          CircleIconContainer(
+          CustomCircleIconContainer(
             icon: Icons.phone,
             text: 'Phone',
             onPressed: onPhone,
+            iconBGColor: AppColors.disabledColor.withOpacity(0.5),
+            iconColor: AppColors.whiteColor,
+            textColor: AppColors.whiteColor,
           ),
-          CircleIconContainer(
+          CustomCircleIconContainer(
             icon: Icons.location_on,
             text: 'Location',
             onPressed: onLocation,
+            iconBGColor: AppColors.disabledColor.withOpacity(0.5),
+            iconColor: AppColors.whiteColor,
+            textColor: AppColors.whiteColor,
           ),
-          CircleIconContainer(
+          CustomCircleIconContainer(
             icon: Icons.share,
             text: 'Share',
             onPressed: onShare,
+            iconBGColor: AppColors.disabledColor.withOpacity(0.5),
+            iconColor: AppColors.whiteColor,
+            textColor: AppColors.whiteColor,
           ),
-          CircleIconContainer(
+          CustomCircleIconContainer(
             icon: Icons.info,
             text: 'Report',
             onPressed: onReport,
+            iconBGColor: AppColors.disabledColor.withOpacity(0.5),
+            iconColor: AppColors.whiteColor,
+            textColor: AppColors.whiteColor,
           ),
         ],
       ),

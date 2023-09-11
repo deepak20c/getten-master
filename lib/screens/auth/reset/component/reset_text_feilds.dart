@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:getten/screens/auth/confirm/confirm_screen.dart';
+import 'package:get/get.dart';
 import 'package:getten/utils/assets/colors/colors.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 import 'package:getten/widget/custom_long_button_widget.dart';
 import 'package:getten/widget/password_textfields_widget.dart';
 
@@ -65,12 +66,7 @@ class _ResetTextFeilsState extends State<ResetTextFeils> {
           backgroundColor: AppColors.primaryColor,
           textColor: AppColors.whiteColor,
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: ((context) => const ConfrimScreen()),
-              ),
-            );
+            Get.offNamed(RoutesName.confrimScreen);
           },
         ),
       ],

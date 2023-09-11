@@ -2,8 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:getten/screens/welcome/onboarding/onboarding_screen.dart';
+import 'package:get/get.dart';
 import 'package:getten/utils/assets/images/images.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 
 class BodySplashScreen extends StatefulWidget {
   const BodySplashScreen({super.key});
@@ -17,14 +18,9 @@ class _BodySplashScreenState extends State<BodySplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 2),
+      const Duration(seconds: 3),
       () {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: ((context) => const OnboardingScreen()),
-          ),
-        );
+        Get.offNamed(RoutesName.onboardingScreen);
       },
     );
   }

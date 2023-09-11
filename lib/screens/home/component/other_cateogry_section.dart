@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:getten/screens/details/details_screen.dart';
+import 'package:get/get.dart';
 import 'package:getten/screens/home/component/row_heading.dart';
-import 'package:getten/screens/other-category/other_category_screen.dart';
 import 'package:getten/utils/models/category/data.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 import 'package:getten/widget/custom_category_card.dart';
 
 class OtherCategorySection extends StatelessWidget {
@@ -25,12 +25,7 @@ class OtherCategorySection extends StatelessWidget {
             startText: 'Other Categories',
             endText: 'View all',
             onTapped: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => const OtherCategoryScreen()),
-                ),
-              );
+              Get.toNamed(RoutesName.otherCategoryScreen);
             },
           ),
           SizedBox(
@@ -42,12 +37,7 @@ class OtherCategorySection extends StatelessWidget {
               padding: EdgeInsets.zero,
               itemBuilder: (context, index) => CustomCategoryCard(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: ((context) => const DetailsScreen()),
-                    ),
-                  );
+                  Get.toNamed(RoutesName.businessScreen);
                 },
                 categoryImageURL: othercategoryItems[index].image,
                 categoryName: othercategoryItems[index].headingText,

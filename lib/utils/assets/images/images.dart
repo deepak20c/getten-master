@@ -45,4 +45,7 @@ class AppImages {
       "assets/images/categories/phone_repairing.png";
   static String hairSalonPNG = "assets/images/categories/hair_salon.png";
   static String educationPNG = "assets/images/categories/education.png";
+
+  static String qrPNG = "assets/images/qr.png";
 }
+  // Other

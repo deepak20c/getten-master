@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getten/screens/details/details_screen.dart';
 import 'package:getten/utils/models/category/data.dart';
 import 'package:getten/utils/responsive/dimension.dart';
 import 'package:getten/widget/custom_category_card.dart';
@@ -35,7 +36,14 @@ class BodyOtherCategoryScreen extends StatelessWidget {
                     return CustomCategoryCard(
                       categoryImageURL: othercategoryItems[index].image,
                       categoryName: othercategoryItems[index].headingText,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const DetailsScreen()),
+                          ),
+                        );
+                      },
                     );
                   },
                 ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:getten/screens/home/component/row_heading.dart';
-import 'package:getten/screens/popular-category/popular_category_screen.dart';
-import 'package:getten/screens/resturant/resturant_screen.dart';
 import 'package:getten/utils/models/category/data.dart';
 import 'package:getten/utils/responsive/dimension.dart';
+import 'package:getten/utils/routes/routes_name.dart';
 import 'package:getten/widget/custom_category_card.dart';
 
 class PopularCategorySection extends StatelessWidget {
@@ -25,12 +25,7 @@ class PopularCategorySection extends StatelessWidget {
             startText: 'Popular Categories',
             endText: 'View all',
             onTapped: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => const PopularCategoryScreen()),
-                ),
-              );
+              Get.toNamed(RoutesName.popularCategoryScreen);
             },
           ),
           SizedBox(
@@ -42,12 +37,7 @@ class PopularCategorySection extends StatelessWidget {
               padding: EdgeInsets.zero,
               itemBuilder: (context, index) => CustomCategoryCard(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: ((context) => const ResturantScreen()),
-                    ),
-                  );
+                  Get.toNamed(RoutesName.businessScreen);
                 },
                 categoryImageURL: popularcategoryItems[index].image,
                 categoryName: popularcategoryItems[index].headingText,
